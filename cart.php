@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 include './controls/nongview.php';
 
 //เพิ่มจำนวนสินค้าในตะกร้า
@@ -106,15 +108,17 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
                             <h4><strong>ราคาสุทธิ : <?= number_format($totalPrice) ?></strong></h4>
                         </div>
                     <?php else: ?>
-                        <p class="text-center col-12">ไม่มีสินค้าในตระกล้า</p>
+                        <p class="text-center col-12">ไม่มีสินค้าในตะกร้า</p>
                     <?php endif; ?>
                     <div class="mt-4 text-right">
+                       <div class="mt-4 text-right">
                        <h4><strong>Delivery Address</strong></h4>
                        <hr>
                        <p><strong>Name: </strong><?= htmlspecialchars($row['first_name']) . " " . htmlspecialchars($row['last_name']) ?></p>
                        <p><strong>Address: </strong><?= htmlspecialchars($row['address']); ?></p>
                        <p><strong>Tel: </strong><?= htmlspecialchars($row['phone']); ?></p>
                        <p><strong>Email:</strong> <?= htmlspecialchars($row['email']); ?></p>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -123,6 +127,9 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
 
     <?php include './components/footer.php'; ?>
 
+
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script>
         function confirmDelete(event) {
             event.preventDefault();
@@ -143,6 +150,6 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
             });
         }
     </script>
-</bostyle=>
+
 
 </html>

@@ -26,11 +26,12 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin') : ?>
-                            <li><a href="/backend/index.php" class="dropdown-item">ตั้งค่า</a></li>
+                            <li><a href="./backend/user.php" class="dropdown-item">ตั้งค่า</a></li>
                             <?php endif; ?>
                             
                             <li><a href="#" class="dropdown-item">โปรไฟล์</a></li>
                             <li><a href="controls/signout.php" class="dropdown-item">ออกจากระบบ</a></li>
+                            <li><a href="addproduct.php" class="dropdown-item">เพิ่มสินค้า</a></li>
                         </ul>
                     </li>
                 </ul>

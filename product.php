@@ -1,10 +1,6 @@
 <?php
 session_start();
 include './controls/fetchProduct.php'; // สมมติไฟล์นี้ fetch ข้อมูลจาก DB
-
-// กรองเฉพาะสินค้าที่เป็นเค้ก
-$stmt = $pdo->prepare("SELECT * FROM cake");
-$stmt->execute();
 ?>
 <!DOCTYPE html>
 <html lang="en">

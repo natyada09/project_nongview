@@ -5,13 +5,6 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// ตัวอย่างสินค้าเค้ก
-$cakes = [
-    ["name" => "Chocolate Cake", "price" => 450, "image" => "./assets/imgs/chocolate.png", "desc" => "เค้กช็อกโกแลตเข้มข้น เนื้อนุ่ม"],
-    ["name" => "Strawberry Cheesecake", "price" => 520, "image" => "./assets/imgs/Strawberry Cheesecake.png", "desc" => "ชีสเค้กเนื้อนุ่ม ราดซอสสตรอเบอร์รีสด"],
-    ["name" => "Red Velvet", "price" => 490, "image" => "./assets/imgs/Red Velvet.png", "desc" => "เรดเวลเวทสีแดงสด รสชาติกลมกล่อม"],
-    ["name" => "Vanilla Cake", "price" => 420, "image" => "./assets/imgs/Vanilla Cake.png", "desc" => "เค้กวนิลาหอมหวาน เนื้อนุ่มละมุน"]
-];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,28 +30,6 @@ $cakes = [
             <h1 class="display-4">ขอต้อนรับสู่ Sweet Delight</h1>
             <p class="lead">พบกับเค้กสดใหม่ หวานละมุน และเมนูสุดพิเศษที่คุณไม่ควรพลาด</p>
             <a href="#content" class="btn btn-light btn-lg mx-auto">ชมเมนูเค้ก</a>
-        </div>
-    </section>
-
-    <!-- Content Section -->
-    <section id="content" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">เมนูเค้กแนะนำ</h2>
-            <div class="row g-4">
-                <?php foreach($cakes as $cake): ?>
-                <div class="col-md-3">
-                    <div class="card h-100">
-                        <img src="<?php echo $cake['image']; ?>" class="card-img-top" alt="<?php echo $cake['name']; ?>">
-                        <div class="card-body text-center">
-                            <h5 class="card-title"><?php echo $cake['name']; ?></h5>
-                            <p class="card-text"><?php echo $cake['desc']; ?></p>
-                            <p class="fw-bold"><?php echo number_format($cake['price']); ?> บาท</p>
-                            <a href="#" class="btn btn-pink">สั่งซื้อ</a>
-                        </div>
-                    </div>
-                </div>
-                <?php endforeach; ?>
-            </div>
         </div>
     </section>
 
